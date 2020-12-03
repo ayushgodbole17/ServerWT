@@ -5,7 +5,7 @@ const login = require('../models/login');
 const path = require("path");
 
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb+srv://tonystark:J.A.R.V.I.S.@cluster0.unnbh.mongodb.net/SampleDB1?retryWrites=true&w=majority";
+const url = process.env.DB_URL;
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
